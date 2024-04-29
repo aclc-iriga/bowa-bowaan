@@ -1,41 +1,29 @@
 <template>
-	<v-navigation-drawer
-		theme="dark"
-		v-model="$store.state.app.sideNav"
-		:permanent="$vuetify.display.lgAndUp"
-	>
-        <v-list class="pa-0">
-            <v-list-item
-                v-for="duo in $store.getters['events/getAssignedDuos']"
-                :key="duo.id"
-                :variant="$route.params.duoSlug === duo.slug ? 'tonal' : 'text'"
-                class="text-center"
-                :class="`justify-center text-center text-button${$route.params.duoSlug === duo.slug ? ' text-yellow' : ''}`"
-                block
-                @click="handleDuoChange(duo)"
-            >
-                {{ duo.title }}
-            </v-list-item>
-        </v-list>
-		<template v-slot:append>
-			<v-row class="text-center mt-2 mb-1 mx-1">
-				<v-col cols="12">
-					<v-btn class="mb-2" variant="tonal" @click="cover" block>COVER</v-btn>
-					<v-btn class="mb-2" variant="tonal" @click="refresh" block :loading="refreshing">REFRESH</v-btn>
-					<div class="pt-2 text-disabled text-uppercase">
-						&copy; {{ $store.state.app.org }}
-					</div>
-				</v-col>
-			</v-row>
-		</template>
-	</v-navigation-drawer>
+    <v-btn
+        v-for="duo in $store.getters['events/getAssignedDuos']"
+        :key="duo.id"
+        :variant="$route.params.duoSlug === duo.slug ? 'tonal' : 'text'"
+        class="text-center"
+        :class="`justify-center text-center mx-2 text-button${$route.params.duoSlug === duo.slug ? ' text-yellow' : ''}`"
+        @click="handleDuoChange(duo)"
+        size="small"
+        style="font-size: 1rem !important;"
+    >
+        {{ duo.title }}
+    </v-btn>
+    <v-btn variant="tonal" @click="cover" size="small" icon class="ml-3 mr-1" style="font-size: 1rem !important;">
+        <v-icon icon="mdi-pause"/>
+    </v-btn>
+    <v-btn variant="tonal" @click="refresh" :loading="refreshing" size="small" icon class="ml-1 mr-3" style="font-size: 1rem !important;">
+        <v-icon icon="mdi-refresh"/>
+    </v-btn>
 </template>
 
 <script>
     import $ from 'jquery';
 
     export default {
-        name: "SideNav",
+        name: "HMenu",
         data() {
             return {
                 refreshing: false
@@ -50,17 +38,13 @@
                         duoSlug: duo.slug
                     }
                 });
-
-                // close sidebar when screen is mdAndDown
-                if (this.$vuetify.display.mdAndDown)
-                    this.$store.state.app.sideNav = false;
+            },
+            cover() {
+                forceScreensaver();
             },
             refresh() {
                 this.refreshing = true;
                 window.location.reload();
-            },
-            cover() {
-                forceScreensaver();
             }
         },
         created() {
