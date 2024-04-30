@@ -100,7 +100,7 @@
         // compute totals
         $deduction = $result_deductions['teams'][$team_key]['deductions']['average'];
         $t['net_average'] = $t['average'] - $t['deduction'];
-        $t['rank']['net_total'] = $t['rank']['total'] - $t['deduction'];
+        $t['rank']['net_total'] = $t['rank']['total'] - ($t['deduction'] / 10);
 
         // push $t['rank']['net_total'] to $unique_net_totals
         if(!in_array($t['rank']['net_total'], $unique_net_totals))
