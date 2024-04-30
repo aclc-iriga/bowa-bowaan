@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2024 at 10:58 AM
+-- Generation Time: Apr 30, 2024 at 09:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -106,7 +106,7 @@ CREATE TABLE `competitions` (
 --
 
 INSERT INTO `competitions` (`id`, `slug`, `title`, `created_at`, `updated_at`) VALUES
-(1, 'bowa-bowaan-2023', 'Bowa-Bowaan Street Dancing Competition 2023', '2023-04-06 13:24:04', '2023-04-06 13:24:04');
+(1, 'bowa-bowaan-2024', 'Bowa-Bowaan Street Dancing Competition 2024', '2023-04-06 13:24:04', '2024-04-30 06:18:12');
 
 -- --------------------------------------------------------
 
@@ -128,18 +128,22 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `event_id`, `title`, `percentage`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Projection, Variation, Energy', 50, '2023-05-01 09:59:13', '2023-05-01 09:59:13'),
-(2, 1, 'Originality and Creativity', 30, '2023-05-01 09:59:58', '2023-05-01 09:59:58'),
+(1, 1, 'Performance (Projection, Variation, Energy)', 50, '2023-05-01 09:59:13', '2024-04-30 06:37:37'),
+(2, 1, 'Choreography (Originality and Creativity)', 30, '2023-05-01 09:59:58', '2024-04-30 06:37:51'),
 (3, 1, 'Orderliness and Discipline', 20, '2023-05-01 10:00:37', '2023-05-01 10:00:37'),
-(4, 2, 'Choreography', 25, '2023-05-01 10:02:41', '2023-05-01 10:02:41'),
-(5, 2, 'Interpretation', 15, '2023-05-01 10:03:10', '2023-05-01 10:03:10'),
+(4, 2, 'Choreography', 20, '2023-05-01 10:02:41', '2024-04-30 06:38:18'),
+(5, 2, 'Interpretation', 25, '2023-05-01 10:03:10', '2024-04-30 06:38:28'),
 (6, 2, 'Music', 20, '2023-05-01 10:03:23', '2023-05-01 10:03:23'),
-(7, 2, 'Mastery', 15, '2023-05-01 10:03:45', '2023-05-01 10:03:45'),
+(7, 2, 'Mastery', 10, '2023-05-01 10:03:45', '2024-04-30 06:39:08'),
 (8, 2, 'Costume and Props', 25, '2023-05-01 10:04:07', '2023-05-01 10:04:07'),
 (9, 4, 'Execution', 30, '2023-05-02 02:35:55', '2023-05-02 02:35:55'),
 (10, 4, 'Technique', 30, '2023-05-02 02:36:03', '2023-05-02 02:36:03'),
 (11, 4, 'Choreography', 30, '2023-05-02 02:36:13', '2023-05-02 02:36:13'),
-(12, 4, 'Overall Impact', 10, '2023-05-02 02:36:22', '2023-05-02 02:36:22');
+(12, 4, 'Overall Impact', 10, '2023-05-02 02:36:22', '2023-05-02 02:36:22'),
+(13, 6, 'Execution', 30, '2024-04-30 06:41:58', '2024-04-30 06:41:58'),
+(14, 6, 'Technique', 30, '2024-04-30 06:42:10', '2024-04-30 06:42:10'),
+(15, 6, 'Choreography', 30, '2024-04-30 06:42:46', '2024-04-30 06:42:46'),
+(16, 6, 'Overall Impact', 10, '2024-04-30 06:43:18', '2024-04-30 06:47:13');
 
 -- --------------------------------------------------------
 
@@ -166,7 +170,7 @@ CREATE TABLE `deductions` (
 
 CREATE TABLE `duos` (
   `id` smallint(5) UNSIGNED NOT NULL,
-  `slug` varchar(32) NOT NULL,
+  `slug` varchar(100) NOT NULL,
   `title` varchar(255) NOT NULL,
   `event_id_1` smallint(5) UNSIGNED NOT NULL,
   `event_id_2` smallint(5) UNSIGNED NOT NULL,
@@ -182,7 +186,7 @@ INSERT INTO `duos` (`id`, `slug`, `title`, `event_id_1`, `event_id_2`, `created_
 (1, 'street-dancing', 'Street Dancing', 1, 5, '2024-04-29 08:57:42', '2024-04-29 08:57:42'),
 (2, 'dance-exhibition', 'Dance Exhibition', 2, 5, '2024-04-29 08:57:42', '2024-04-29 08:57:42'),
 (3, 'deductions', 'Deductions', 3, 5, '2024-04-29 08:57:42', '2024-04-29 08:57:42'),
-(4, 'alinsangan-festival-queen', 'Alinsangan Festival Queen', 4, 5, '2024-04-29 08:57:42', '2024-04-29 08:57:42');
+(4, 'alinsangan-festival-queen-datu-topas', 'Alinsangan Festival Queen & Datu Topas', 4, 6, '2024-04-29 08:57:42', '2024-04-30 06:36:06');
 
 -- --------------------------------------------------------
 
@@ -197,14 +201,6 @@ CREATE TABLE `eliminations` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `eliminations`
---
-
-INSERT INTO `eliminations` (`id`, `event_id`, `team_id`, `created_at`, `updated_at`) VALUES
-(1, 4, 4, '2023-05-02 04:51:17', '2023-05-02 04:51:17'),
-(2, 4, 6, '2023-05-02 04:51:18', '2023-05-02 04:51:18');
 
 -- --------------------------------------------------------
 
@@ -230,7 +226,8 @@ INSERT INTO `events` (`id`, `category_id`, `slug`, `title`, `created_at`, `updat
 (2, 1, 'dance-exhibition', 'Dance Exhibition', '2023-05-01 09:53:53', '2023-05-01 09:53:53'),
 (3, 2, 'deductions', 'Deductions', '2023-05-01 09:57:28', '2023-05-01 09:57:28'),
 (4, 1, 'alinsangan-festival-queen', 'Alinsangan Festival Queen', '2023-05-02 02:35:33', '2023-05-02 02:35:33'),
-(5, 3, '', 'Event Proxy 1', '2024-04-29 08:54:33', '2024-04-29 08:54:33');
+(5, 3, '', 'Event Proxy 1', '2024-04-29 08:54:33', '2024-04-29 08:54:33'),
+(6, 1, 'datu-topas', 'Datu Topas', '2024-04-30 06:32:40', '2024-04-30 06:32:40');
 
 -- --------------------------------------------------------
 
@@ -257,7 +254,7 @@ CREATE TABLE `judges` (
 --
 
 INSERT INTO `judges` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Judge 01', 'no-avatar.jpg', 'judge01', 'judge01', NULL, NULL, NULL, '2023-04-06 13:58:11', '2023-05-21 21:02:49'),
+(1, 1, 'Judge 01', 'no-avatar.jpg', 'judge01', 'judge01', NULL, NULL, NULL, '2023-04-06 13:58:11', '2024-04-30 06:56:20'),
 (2, 2, 'Judge 02', 'no-avatar.jpg', 'judge02', 'judge02', NULL, NULL, NULL, '2023-04-06 13:58:28', '2023-05-21 21:02:55'),
 (3, 3, 'Judge 03', 'no-avatar.jpg', 'judge03', 'judge03', NULL, NULL, NULL, '2023-04-06 13:58:42', '2023-05-21 21:03:01'),
 (4, 4, 'Judge 04', 'no-avatar.jpg', 'judge04', 'judge04', NULL, NULL, NULL, '2023-04-06 13:59:26', '2023-05-21 21:03:04'),
@@ -299,7 +296,12 @@ INSERT INTO `judge_event` (`id`, `judge_id`, `event_id`, `is_chairman`, `active_
 (12, 2, 4, 0, 1, 0, '2023-05-02 02:36:46', '2024-04-25 09:15:36'),
 (13, 3, 4, 0, 1, 0, '2023-05-02 02:36:51', '2024-04-25 09:15:36'),
 (14, 4, 4, 0, 1, 0, '2023-05-02 02:36:55', '2024-04-25 09:15:36'),
-(15, 5, 4, 1, 1, 0, '2023-05-02 02:37:03', '2024-04-25 09:15:36');
+(15, 5, 4, 1, 1, 0, '2023-05-02 02:37:03', '2024-04-25 09:15:36'),
+(16, 1, 6, 0, 1, 0, '2024-04-30 06:44:00', '2024-04-30 06:44:00'),
+(17, 2, 6, 0, 1, 0, '2024-04-30 06:44:08', '2024-04-30 06:44:08'),
+(18, 3, 6, 0, 1, 0, '2024-04-30 06:44:18', '2024-04-30 06:44:18'),
+(19, 4, 6, 0, 1, 0, '2024-04-30 06:44:25', '2024-04-30 06:44:25'),
+(20, 5, 6, 1, 1, 0, '2024-04-30 06:44:32', '2024-04-30 06:44:34');
 
 -- --------------------------------------------------------
 
@@ -420,7 +422,7 @@ CREATE TABLE `technicals` (
 --
 
 INSERT INTO `technicals` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Technical 01', 'no-avatar.jpg', 'technical01', 'technical01', NULL, NULL, NULL, '2023-02-19 08:58:58', '2023-05-02 14:37:40');
+(1, 1, 'Technical 01', 'no-avatar.jpg', 'technical01', 'technical01', NULL, NULL, NULL, '2023-02-19 08:58:58', '2024-04-30 06:28:25');
 
 -- --------------------------------------------------------
 
@@ -650,7 +652,7 @@ ALTER TABLE `competitions`
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `deductions`
@@ -668,13 +670,13 @@ ALTER TABLE `duos`
 -- AUTO_INCREMENT for table `eliminations`
 --
 ALTER TABLE `eliminations`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `judges`
@@ -686,7 +688,7 @@ ALTER TABLE `judges`
 -- AUTO_INCREMENT for table `judge_event`
 --
 ALTER TABLE `judge_event`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `noshows`
