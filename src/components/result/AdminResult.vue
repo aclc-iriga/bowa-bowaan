@@ -263,6 +263,7 @@
                         <v-col
                             v-for="judge in judges" :key="judge.id"
                             :md="signatoryColumnWidth"
+                            :sm="signatoryColumnWidth"
                         >
                             <v-card class="text-center mb-5" :class="{ 'text-warning': judge.calling }" flat>
                                 <v-card-title class="pt-16 pb-1 font-weight-bold">
