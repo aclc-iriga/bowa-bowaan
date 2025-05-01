@@ -59,14 +59,16 @@ else if(isset($_POST['signOut'])) {
 
 
 $routes = [
-    [ "name" => "Tabulation"      , "route" => "/bowa-bowaan"          ],
-    [ "name" => "CRUD"            , "route" => "crud/competitions.php" ],
-    [ "name" => "User Assignments", "route" => "crud/assignment"       ],
-    [ "name" => "Eliminations"    , "route" => "crud/eliminations"     ],
-    [ "name" => "Arrangements"    , "route" => "crud/orders"           ],
-    [ "name" => "Titles"          , "route" => "crud/titles"           ],
-    [ "name" => "Overall Results" , "route" => "results/overall"       ],
-    [ "name" => "Rating Sheets"   , "route" => "papers/rating-sheets"  ]
+    [ "name" => "Tabulation"                             , "route" => "/bowa-bowaan"                      ],
+    [ "name" => "CRUD"                                   , "route" => "crud/competitions.php"             ],
+    [ "name" => "User Assignments"                       , "route" => "crud/assignment"                   ],
+    [ "name" => "Eliminations"                           , "route" => "crud/eliminations"                 ],
+    [ "name" => "Arrangements"                           , "route" => "crud/orders"                       ],
+    [ "name" => "Titles"                                 , "route" => "crud/titles"                       ],
+    [ "name" => "Results: Datu Topas and Dayang Laypani" , "route" => "results/datu-topas-dayang-laypani" ],
+    [ "name" => "Results: Alinsangan Festival Queen"     , "route" => "results/alinsangan-festival-queen" ],
+    [ "name" => "Results: Overall"                       , "route" => "results/overall"                   ],
+    [ "name" => "Rating Sheets"                          , "route" => "papers/rating-sheets"              ]
 ];
 ?>
 <!DOCTYPE html>

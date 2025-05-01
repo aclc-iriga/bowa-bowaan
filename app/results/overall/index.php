@@ -208,6 +208,25 @@
         if($i >= sizeof($unique_final_fractional_ranks))
             break;
     }
+
+    // check if judges have unlocked ratings
+    $judgesWithUnlockedRatings = [];
+    foreach ($judges as $judge) {
+        $unlockedEvents = [];
+        foreach ($events as $event) {
+            if ($judge->hasUnlockedRatings($event)) {
+                $unlockedEvents[] = $event->getTitle();
+            }
+        }
+        if (!empty($unlockedEvents)) {
+            $unlockedEvents = array_unique($unlockedEvents);
+            $judgesWithUnlockedRatings[] = [
+                'name' => $judge->getName(),
+                'number' => $judge->getNumber(),
+                'events' => implode(', ', $unlockedEvents)
+            ];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -236,6 +255,22 @@
     <title>Overall Results | <?= $competition_title ?></title>
 </head>
 <body>
+    <?php if (!empty($judgesWithUnlockedRatings)) { ?>
+        <div class="alert alert-warning text-center">
+            <h5><i class="fas fa-exclamation-triangle me-2"></i>Warning: The following judges have unlocked ratings:</h5>
+            <div class="d-flex flex-row justify-content-center">
+                <img src="../../crud/assets/ramona.jpg" alt="Warning" style="width: 250px; height: 200px; padding-right: 10px; align-self: flex-end">
+                <ul class="list-unstyled mb-0">
+                    <?php foreach ($judgesWithUnlockedRatings as $judgeInfo) { ?>
+                        <li style="font-weight: bolder !important; font-size: larger">
+                            <?= $judgeInfo['name'] ?> (Judge <?= $judgeInfo['number'] ?>) - Events: <?= $judgeInfo['events'] ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <p class="mt-2">Please make sure the ratings are all locked before finalizing results.</p>
+        </div>
+    <?php } ?>
     <div class="p-1">
         <table class="table table-bordered result">
             <thead class="bt">

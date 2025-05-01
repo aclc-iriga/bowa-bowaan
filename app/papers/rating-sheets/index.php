@@ -86,7 +86,14 @@ require_once '../../models/Category.php';
                             <?php } ?>
 
                             <!-- total spacer -->
-                            <th class="table-success bb br"></th>
+                            <th class="table-success text-center bb br">
+                                <?php $total_percent = $event->getTotalCriteriaPercentage(); ?>
+                                <small>
+                                    <?= number_format(($total_percent * 0.50), 2) ?>
+                                    -
+                                    <?= ($total_percent >= 100) ? number_format($total_percent, 0) : number_format($total_percent, 2) ?>
+                                </small>
+                            </th>
 
                             <!-- rank notes -->
                             <th class="table-primary text-center bb br"><small>1 = <i>highest</i></small></th>

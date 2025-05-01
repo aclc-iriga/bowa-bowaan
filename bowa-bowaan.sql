@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2025 at 10:46 AM
+-- Generation Time: May 01, 2025 at 08:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bowa-bowaan`
+-- Database: `bowa-bowaan-prod`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'DEVELOPMENT', 'no-avatar.jpg', 'admin', 'admin', NULL, NULL, '2025-05-01 08:25:03', '2023-02-19 07:36:32', '2025-05-01 08:25:03');
+(1, 1, 'DEVELOPMENT', 'no-avatar.jpg', 'admin', 'admin', NULL, NULL, NULL, '2023-02-19 07:36:32', '2025-05-01 18:48:48');
 
 -- --------------------------------------------------------
 
@@ -129,22 +129,28 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `event_id`, `title`, `percentage`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Execution', 30, '2023-05-02 02:35:55', '2025-05-01 08:09:25'),
-(2, 2, 'Technique', 30, '2023-05-02 02:36:03', '2025-05-01 08:09:28'),
-(3, 2, 'Choreography', 30, '2023-05-02 02:36:13', '2025-05-01 08:09:31'),
-(4, 2, 'Overall Impact', 10, '2023-05-02 02:36:22', '2025-05-01 08:09:34'),
-(5, 3, 'Execution', 30, '2024-04-30 06:41:58', '2025-05-01 08:09:38'),
-(6, 3, 'Technique', 30, '2024-04-30 06:42:10', '2025-05-01 08:09:41'),
-(7, 3, 'Choreography', 30, '2024-04-30 06:42:46', '2025-05-01 08:09:44'),
-(8, 3, 'Overall Impact', 10, '2024-04-30 06:43:18', '2025-05-01 08:09:46'),
-(9, 4, 'Execution', 30, '2024-05-01 18:33:12', '2025-05-01 08:09:49'),
-(10, 4, 'Technique', 30, '2024-05-01 18:33:24', '2025-05-01 08:09:52'),
-(11, 4, 'Choreography', 30, '2024-05-01 18:33:38', '2025-05-01 08:09:55'),
-(12, 4, 'Overall Impact', 10, '2024-05-01 18:33:45', '2025-05-01 08:09:57'),
-(13, 5, 'Execution', 30, '2025-05-01 08:08:29', '2025-05-01 08:10:00'),
-(14, 5, 'Technique', 30, '2025-05-01 08:08:38', '2025-05-01 08:10:03'),
-(15, 5, 'Choreography', 30, '2025-05-01 08:08:49', '2025-05-01 08:10:07'),
-(16, 5, 'Overall Impact', 10, '2025-05-01 08:08:58', '2025-05-01 08:10:11');
+(1, 3, 'Execution', 30, '2023-05-02 02:35:55', '2025-05-01 08:09:25'),
+(2, 3, 'Technique', 30, '2023-05-02 02:36:03', '2025-05-01 08:09:28'),
+(3, 3, 'Choreography', 30, '2023-05-02 02:36:13', '2025-05-01 08:09:31'),
+(4, 3, 'Overall Impact', 10, '2023-05-02 02:36:22', '2025-05-01 08:09:34'),
+(13, 2, 'Execution', 30, '2025-05-01 08:08:29', '2025-05-01 08:10:00'),
+(14, 2, 'Technique', 30, '2025-05-01 08:08:38', '2025-05-01 08:10:03'),
+(15, 2, 'Choreography', 30, '2025-05-01 08:08:49', '2025-05-01 08:10:07'),
+(16, 2, 'Overall Impact', 10, '2025-05-01 08:08:58', '2025-05-01 08:10:11'),
+(17, 4, 'Performance (Projection, Variation, Energy)', 50, '2025-05-01 16:30:18', '2025-05-01 16:30:18'),
+(18, 4, 'Choreography (Originality & Creativity)', 30, '2025-05-01 16:30:32', '2025-05-01 16:31:05'),
+(19, 4, 'Orderliness and Discipline', 20, '2025-05-01 16:30:46', '2025-05-01 16:30:46'),
+(20, 5, 'Choreography', 20, '2025-05-01 16:31:57', '2025-05-01 16:31:57'),
+(21, 5, 'Interpretation', 25, '2025-05-01 16:32:09', '2025-05-01 16:32:09'),
+(22, 5, 'Music', 20, '2025-05-01 16:32:18', '2025-05-01 16:32:18'),
+(23, 5, 'Mastery', 10, '2025-05-01 16:32:26', '2025-05-01 16:32:26'),
+(24, 5, 'Costume & Props', 25, '2025-05-01 16:32:40', '2025-05-01 16:32:40'),
+(25, 6, 'Characterization', 40, '2025-05-01 16:43:27', '2025-05-01 17:40:14'),
+(26, 6, 'Execution and Choreography', 40, '2025-05-01 16:43:35', '2025-05-01 17:40:24'),
+(27, 6, 'Technique and Over-all Impact', 20, '2025-05-01 16:43:44', '2025-05-01 17:40:44'),
+(29, 7, 'Characterization', 40, '2025-05-01 16:44:12', '2025-05-01 17:41:14'),
+(30, 7, 'Execution and Choreography', 40, '2025-05-01 16:44:21', '2025-05-01 17:41:22'),
+(31, 7, 'Technique and Over-all Impact', 20, '2025-05-01 16:44:29', '2025-05-01 17:41:30');
 
 -- --------------------------------------------------------
 
@@ -184,10 +190,13 @@ CREATE TABLE `duos` (
 --
 
 INSERT INTO `duos` (`id`, `slug`, `title`, `event_id_1`, `event_id_2`, `created_at`, `updated_at`) VALUES
-(1, 'deductions', 'Deductions', 1, 6, '2024-04-29 08:57:42', '2025-05-01 07:43:57'),
-(2, 'alinsangan-festival-queen-showdown', 'Alinsangan Festival Queen Showdown', 2, 6, '2024-04-29 08:57:42', '2025-05-01 08:12:27'),
-(3, 'datu-topas-dayang-laypani-showdown-individual', 'Datu Topas Showdown (Individual)', 3, 4, '2024-05-01 18:37:29', '2025-05-01 08:21:36'),
-(5, 'datu-topas-dayang-laypani-showdown-combined', 'Datu Topas & Dayang Laypani Showdown', 5, 6, '2025-05-01 08:13:00', '2025-05-01 08:21:51');
+(1, 'deductions', 'Deductions', 1, 8, '2024-04-29 08:57:42', '2025-05-01 07:43:57'),
+(2, 'datu-topas-dayang-laypani-showdown-combined', 'Datu Topas & Dayang Laypani Showdown', 2, 8, '2025-05-01 08:13:00', '2025-05-01 12:05:00'),
+(3, 'alinsangan-festival-queen-showdown', 'Alinsangan Festival Queen Showdown', 3, 8, '2024-04-29 08:57:42', '2025-05-01 15:48:35'),
+(4, 'street-dancing', 'Street Dancing', 4, 8, '2025-05-01 18:11:19', '2025-05-01 18:13:18'),
+(5, 'dance-exhibition', 'Dance Exhibition', 5, 8, '2025-05-01 18:11:57', '2025-05-01 18:13:22'),
+(6, 'datu-topas-dayang-laypani', 'Datu Topas & Dayang Laypani', 6, 8, '2025-05-01 18:12:30', '2025-05-01 18:13:25'),
+(7, 'alinsangan-festival-queen', 'Alinsangan Festival Queen', 7, 8, '2025-05-01 18:13:01', '2025-05-01 18:13:28');
 
 -- --------------------------------------------------------
 
@@ -224,11 +233,13 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `category_id`, `slug`, `title`, `created_at`, `updated_at`) VALUES
 (1, 3, 'deductions', 'Deductions', '2023-05-01 09:57:28', '2025-05-01 08:05:17'),
-(2, 1, 'alinsangan-festival-queen-showdown', 'Alinsangan Festival Queen Showdown', '2023-05-02 02:35:33', '2025-05-01 08:13:32'),
-(3, 1, 'datu-topas-showdown', 'Datu Topas Showdown', '2024-04-30 06:32:40', '2025-05-01 08:05:28'),
-(4, 1, 'dayang-laypani-showdown', 'Dayang Laypani Showdown', '2024-05-01 18:32:27', '2025-05-01 08:05:30'),
-(5, 1, 'datu-topas-dayang-laypani-showdown', 'Datu Topas & Dayang Laypani Showdown', '2025-05-01 08:05:03', '2025-05-01 08:05:37'),
-(6, 4, '', 'Event Proxy 1', '2024-04-29 08:54:33', '2025-05-01 08:05:40');
+(2, 1, 'datu-topas-dayang-laypani-showdown', 'Datu Topas & Dayang Laypani Showdown', '2025-05-01 08:05:03', '2025-05-01 17:00:52'),
+(3, 1, 'alinsangan-festival-queen-showdown', 'Alinsangan Festival Queen Showdown', '2023-05-02 02:35:33', '2025-05-01 17:00:56'),
+(4, 2, 'street-dancing', 'Street Dancing', '2025-05-01 16:16:28', '2025-05-01 16:34:34'),
+(5, 2, 'dance-exhibition', 'Dance Exhibition', '2025-05-01 16:17:47', '2025-05-01 16:34:37'),
+(6, 2, 'datu-topas-dayang-laypani', 'Datu Topas & Dayang Laypani', '2025-05-01 16:39:52', '2025-05-01 17:02:14'),
+(7, 2, 'alinsangan-festival-queen', 'Alinsangan Festival Queen', '2025-05-01 16:40:56', '2025-05-01 16:41:34'),
+(8, 4, '', 'Event Proxy 1', '2024-04-29 08:54:33', '2025-05-01 16:41:38');
 
 -- --------------------------------------------------------
 
@@ -255,11 +266,14 @@ CREATE TABLE `judges` (
 --
 
 INSERT INTO `judges` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Judge 01', 'no-avatar.jpg', 'judge01', 'judge01', NULL, NULL, '2025-05-01 08:38:07', '2023-04-06 13:58:11', '2025-05-01 08:38:22'),
-(2, 2, 'Judge 02', 'no-avatar.jpg', 'judge02', 'judge02', NULL, NULL, NULL, '2023-04-06 13:58:28', '2023-05-21 21:02:55'),
-(3, 3, 'Judge 03', 'no-avatar.jpg', 'judge03', 'judge03', NULL, NULL, NULL, '2023-04-06 13:58:42', '2023-05-21 21:03:01'),
-(4, 4, 'Judge 04', 'no-avatar.jpg', 'judge04', 'judge04', NULL, NULL, NULL, '2023-04-06 13:59:26', '2023-05-21 21:03:04'),
-(5, 5, 'Judge 05', 'no-avatar.jpg', 'judge05', 'judge05', NULL, NULL, NULL, '2023-04-06 14:00:00', '2023-05-21 21:03:08');
+(1, 1, 'Judge 1.01', 'no-avatar.jpg', 'judge101', 'judge101', NULL, NULL, NULL, '2023-04-06 13:58:11', '2025-05-01 18:50:04'),
+(2, 2, 'Judge 1.02', 'no-avatar.jpg', 'judge102', 'judge102', NULL, NULL, NULL, '2023-04-06 13:58:28', '2025-05-01 18:50:28'),
+(3, 3, 'Judge 1.03', 'no-avatar.jpg', 'judge103', 'judge103', NULL, NULL, NULL, '2023-04-06 13:58:42', '2025-05-01 18:50:30'),
+(4, 1, 'Judge 2.01', 'no-avatar.jpg', 'judge201', 'judge201', NULL, NULL, NULL, '2025-05-01 16:48:54', '2025-05-01 18:50:32'),
+(5, 2, 'Judge 2.02', 'no-avatar.jpg', 'judge202', 'judge202', NULL, NULL, NULL, '2025-05-01 16:48:54', '2025-05-01 16:48:54'),
+(6, 3, 'Judge 2.03', 'no-avatar.jpg', 'judge203', 'judge203', NULL, NULL, NULL, '2025-05-01 16:48:54', '2025-05-01 16:48:54'),
+(7, 4, 'Judge 2.04', 'no-avatar.jpg', 'judge204', 'judge204', NULL, NULL, NULL, '2025-05-01 16:48:54', '2025-05-01 16:48:54'),
+(8, 5, 'Judge 2.05', 'no-avatar.jpg', 'judge205', 'judge205', NULL, NULL, NULL, '2025-05-01 16:48:54', '2025-05-01 16:48:54');
 
 -- --------------------------------------------------------
 
@@ -283,26 +297,32 @@ CREATE TABLE `judge_event` (
 --
 
 INSERT INTO `judge_event` (`id`, `judge_id`, `event_id`, `is_chairman`, `active_team_id`, `has_active_team`, `created_at`, `updated_at`) VALUES
-(11, 1, 2, 0, 1, 0, '2023-05-02 02:36:38', '2024-04-25 09:15:36'),
-(12, 2, 2, 0, 1, 0, '2023-05-02 02:36:46', '2024-04-25 09:15:36'),
-(13, 3, 2, 0, 1, 0, '2023-05-02 02:36:51', '2024-04-25 09:15:36'),
-(14, 4, 2, 0, 1, 0, '2023-05-02 02:36:55', '2024-04-25 09:15:36'),
-(15, 5, 2, 0, 1, 0, '2023-05-02 02:37:03', '2024-05-01 18:45:42'),
-(16, 1, 3, 0, 1, 0, '2024-04-30 06:44:00', '2024-04-30 06:44:00'),
-(17, 2, 3, 0, 1, 0, '2024-04-30 06:44:08', '2024-04-30 06:44:08'),
-(18, 3, 3, 0, 1, 0, '2024-04-30 06:44:18', '2024-04-30 06:44:18'),
-(19, 4, 3, 0, 1, 0, '2024-04-30 06:44:25', '2024-04-30 06:44:25'),
-(20, 5, 3, 0, 1, 0, '2024-04-30 06:44:32', '2024-05-01 18:45:41'),
-(21, 1, 4, 0, 1, 0, '2024-05-01 18:44:52', '2024-05-01 18:44:52'),
-(22, 2, 4, 0, 1, 0, '2024-05-01 18:45:03', '2024-05-01 18:45:03'),
-(23, 3, 4, 0, 1, 0, '2024-05-01 18:45:12', '2024-05-01 18:45:12'),
-(24, 4, 4, 0, 1, 0, '2024-05-01 18:45:19', '2024-05-01 18:45:19'),
-(25, 5, 4, 0, 1, 0, '2024-05-01 18:45:25', '2024-05-01 18:45:25'),
-(26, 1, 5, 0, 1, 0, '2025-05-01 08:22:49', '2025-05-01 08:22:49'),
-(27, 2, 5, 0, 1, 0, '2025-05-01 08:22:54', '2025-05-01 08:22:54'),
-(28, 3, 5, 0, 1, 0, '2025-05-01 08:23:05', '2025-05-01 08:23:05'),
-(29, 4, 5, 0, 1, 0, '2025-05-01 08:23:11', '2025-05-01 08:23:11'),
-(30, 5, 5, 0, 1, 0, '2025-05-01 08:23:17', '2025-05-01 08:23:17');
+(11, 1, 3, 0, 1, 0, '2023-05-02 02:36:38', '2024-04-25 09:15:36'),
+(12, 2, 3, 0, 1, 0, '2023-05-02 02:36:46', '2024-04-25 09:15:36'),
+(13, 3, 3, 1, 1, 0, '2023-05-02 02:36:51', '2025-05-01 12:08:59'),
+(26, 1, 2, 0, 1, 0, '2025-05-01 08:22:49', '2025-05-01 08:22:49'),
+(27, 2, 2, 0, 1, 0, '2025-05-01 08:22:54', '2025-05-01 08:22:54'),
+(28, 3, 2, 1, 1, 0, '2025-05-01 08:23:05', '2025-05-01 12:09:01'),
+(31, 4, 4, 0, 1, 0, '2025-05-01 16:50:51', '2025-05-01 16:50:51'),
+(32, 4, 5, 0, 1, 0, '2025-05-01 16:50:55', '2025-05-01 16:50:55'),
+(33, 4, 6, 0, 1, 0, '2025-05-01 16:51:18', '2025-05-01 16:51:18'),
+(34, 4, 7, 0, 1, 0, '2025-05-01 16:51:22', '2025-05-01 16:51:22'),
+(35, 5, 4, 0, 1, 0, '2025-05-01 16:51:32', '2025-05-01 16:51:32'),
+(36, 5, 5, 0, 1, 0, '2025-05-01 16:51:36', '2025-05-01 16:51:36'),
+(37, 5, 6, 0, 1, 0, '2025-05-01 16:51:42', '2025-05-01 16:51:42'),
+(38, 5, 7, 0, 1, 0, '2025-05-01 16:51:46', '2025-05-01 16:51:46'),
+(39, 6, 4, 0, 1, 0, '2025-05-01 16:52:29', '2025-05-01 16:52:29'),
+(40, 6, 5, 0, 1, 0, '2025-05-01 16:52:32', '2025-05-01 16:52:32'),
+(41, 6, 6, 0, 1, 0, '2025-05-01 16:52:36', '2025-05-01 16:52:36'),
+(42, 6, 7, 0, 1, 0, '2025-05-01 16:52:40', '2025-05-01 16:52:40'),
+(43, 7, 4, 0, 1, 0, '2025-05-01 16:52:47', '2025-05-01 16:52:47'),
+(44, 7, 5, 0, 1, 0, '2025-05-01 16:52:50', '2025-05-01 16:52:50'),
+(45, 7, 6, 0, 1, 0, '2025-05-01 16:52:54', '2025-05-01 16:52:54'),
+(46, 7, 7, 0, 1, 0, '2025-05-01 16:52:57', '2025-05-01 16:52:57'),
+(47, 8, 4, 0, 1, 0, '2025-05-01 16:53:30', '2025-05-01 16:53:30'),
+(48, 8, 5, 0, 1, 0, '2025-05-01 16:53:34', '2025-05-01 16:53:34'),
+(49, 8, 6, 0, 1, 0, '2025-05-01 16:53:37', '2025-05-01 16:53:37'),
+(50, 8, 7, 0, 1, 0, '2025-05-01 16:53:40', '2025-05-01 16:53:40');
 
 -- --------------------------------------------------------
 
@@ -391,12 +411,12 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `number`, `name`, `location`, `avatar`, `created_at`, `updated_at`) VALUES
-(1, 1, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:50:48', '2025-05-01 08:39:04'),
-(2, 2, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:52:26', '2025-05-01 08:39:10'),
-(3, 3, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:43:02', '2025-05-01 08:39:15'),
-(4, 4, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:49:52', '2025-05-01 08:39:21'),
-(5, 5, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:46:35', '2025-05-01 08:39:27'),
-(6, 6, 'CLUSTER _', 'Rancheria ____', 'contingent.jpg', '2023-04-06 13:51:50', '2025-05-01 08:39:34');
+(1, 1, 'Rancheria Lupa', '', 'contingent.jpg', '2023-04-06 13:50:48', '2025-05-01 12:18:05'),
+(2, 2, 'Rancheria Antacudos', '', 'contingent.jpg', '2023-04-06 13:52:26', '2025-05-01 12:18:08'),
+(3, 3, 'Rancheria Caobnan', '', 'contingent.jpg', '2023-04-06 13:43:02', '2025-05-01 12:18:11'),
+(4, 4, 'Rancheria Bowa', '', 'contingent.jpg', '2023-04-06 13:49:52', '2025-05-01 12:18:13'),
+(5, 5, 'Rancheria Sabang', '', 'contingent.jpg', '2023-04-06 13:46:35', '2025-05-01 12:18:15'),
+(6, 6, 'Rancheria Binoyoan', '', 'contingent.jpg', '2023-04-06 13:51:50', '2025-05-01 12:18:18');
 
 -- --------------------------------------------------------
 
@@ -423,7 +443,7 @@ CREATE TABLE `technicals` (
 --
 
 INSERT INTO `technicals` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Technical 01', 'no-avatar.jpg', 'technical01', 'technical01', NULL, NULL, NULL, '2023-02-19 08:58:58', '2024-04-30 06:28:25');
+(1, 1, 'Technical 01', 'no-avatar.jpg', 'technical01', 'technical01', NULL, NULL, NULL, '2023-02-19 08:58:58', '2025-05-01 18:47:31');
 
 -- --------------------------------------------------------
 
@@ -468,18 +488,12 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`id`, `event_id`, `rank`, `title`, `created_at`, `updated_at`) VALUES
-(1, 2, 1, '1st Place', '2025-05-01 08:43:33', '2025-05-01 08:43:33'),
-(2, 2, 2, '2nd Place', '2025-05-01 08:43:33', '2025-05-01 08:43:33'),
-(3, 2, 3, '3rd Place', '2025-05-01 08:43:33', '2025-05-01 08:43:33'),
-(4, 5, 1, '1st Place', '2025-05-01 08:44:01', '2025-05-01 08:44:01'),
-(5, 5, 2, '2nd Place', '2025-05-01 08:44:01', '2025-05-01 08:44:01'),
-(6, 5, 3, '3rd Place', '2025-05-01 08:44:01', '2025-05-01 08:44:01'),
-(7, 3, 1, '1st Place', '2025-05-01 08:44:36', '2025-05-01 08:44:36'),
-(8, 3, 2, '2nd Place', '2025-05-01 08:44:36', '2025-05-01 08:44:36'),
-(9, 3, 3, '3rd Place', '2025-05-01 08:44:36', '2025-05-01 08:44:36'),
-(10, 4, 1, '1st Place', '2025-05-01 08:45:12', '2025-05-01 08:45:12'),
-(11, 4, 2, '2nd Place', '2025-05-01 08:45:12', '2025-05-01 08:45:12'),
-(12, 4, 3, '3rd Place', '2025-05-01 08:45:12', '2025-05-01 08:45:12');
+(1, 5, 1, '1st Place', '2025-05-01 00:44:01', '2025-05-01 18:44:36'),
+(2, 5, 2, '2nd Place', '2025-05-01 00:44:01', '2025-05-01 18:44:39'),
+(3, 5, 3, '3rd Place', '2025-05-01 00:44:01', '2025-05-01 18:44:41'),
+(4, 4, 1, '1st Place', '2025-05-01 00:45:12', '2025-05-01 18:44:44'),
+(5, 4, 2, '2nd Place', '2025-05-01 00:45:12', '2025-05-01 18:44:46'),
+(6, 4, 3, '3rd Place', '2025-05-01 00:45:12', '2025-05-01 18:44:49');
 
 --
 -- Indexes for dumped tables
@@ -658,7 +672,7 @@ ALTER TABLE `competitions`
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `deductions`
@@ -670,7 +684,7 @@ ALTER TABLE `deductions`
 -- AUTO_INCREMENT for table `duos`
 --
 ALTER TABLE `duos`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `eliminations`
@@ -682,19 +696,19 @@ ALTER TABLE `eliminations`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `judge_event`
 --
 ALTER TABLE `judge_event`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `noshows`
@@ -742,7 +756,7 @@ ALTER TABLE `technical_event`
 -- AUTO_INCREMENT for table `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
